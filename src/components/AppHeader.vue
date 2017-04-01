@@ -1,5 +1,11 @@
 <template>
   <div class="header">
-    <h1>遅刻のイイワケ考えるゾウ</h1>
+    <h1><img src="./logo.svg" width="379" height="265" /></h1>
   </div>
 </template>
+
+<style scoped>
+.header {
+  text-align: center;
+}
+</style>
