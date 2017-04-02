@@ -5,23 +5,32 @@
     </div>
 
     <div class="generator__form" v-if="doesGenerated()">
-      <span class="generator__subject">{{ subject }}</span>が<span class="generator__reason">{{ reason }}</span>ので遅刻します！！！
+      <span class="generator__subject">{{ subject }}</span>が<span class="generator__reason">{{ reason }}</span>ので遅刻します
     </div>
   </div>
 </template>
 
 <script>
+import MessageGenerator from './model/message_generator'
+
 export default {
   data() {
     return {
-      subject: '犬',
-      reason: 'ハウスから出てこない',
+      subject: '',
+      reason: '',
       generated: false
     }
   },
   methods: {
-    // TODO データのもたせ方
     create: function() {
+      const generator = new MessageGenerator()
+      const messages = generator.generate()
+
+      console.log(messages)
+
+      this.subject = messages.subject
+      this.reason = messages.reason
+
       this.generated = true
     },
     doesGenerated: function() {
@@ -34,7 +43,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: 'LogoTypeJP';
-  src: url('./LogoTypeJP.ttf') format('truetype');
+  src: url('../LogoTypeJP.ttf') format('truetype');
 }
 
 .generator {

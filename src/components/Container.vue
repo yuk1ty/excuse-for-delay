@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader'
-import Generator from '@/components/Generator'
-import AppDescription from '@/components/AppDescription'
+import AppHeader from '@/components/header/AppHeader'
+import Generator from '@/components/generator/Generator'
+import AppDescription from '@/components/description/AppDescription'
 
 export default {
   name: 'main',
